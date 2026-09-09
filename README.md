@@ -22,7 +22,7 @@
 A modern, high-performance, and responsive portfolio website designed with an **Obsidian Kinetic** dark aesthetic. Built for showcasing frontend engineering skills, real-world applications, academic credentials, and verified certifications.
 
 - **Live URL:** [https://ahmed-khaled-yaseen.vercel.app](https://ahmed-khaled-yaseen.vercel.app)
-- **Role:** Frontend Engineer & Computer Science Student (Benha University, GPA 3.83 / Distinction)
+- **Role:** Frontend Engineer • Graduated from Benha University (Computer Science, GPA 3.83 / Distinction)
 
 ---
 
@@ -52,7 +52,7 @@ A modern, high-performance, and responsive portfolio website designed with an **
 
 ### 1. [Code-Mentor (Graduation Project)](https://github.com/AhmedKhaledYaseen/Code-Mentor)
 > **AI-Powered Code Review & Learning Platform**  
-> Features adaptive assessment, multi-agent code review, and personalized learning paths designed for engineers and computer science students.  
+> Features adaptive assessment, multi-agent code review, and personalized learning paths designed to accelerate programming mastery with automated real-time feedback.  
 > **Tech:** `React` • `.NET` • `FastAPI` • `AI integration` • `Tailwind CSS`  
 > 🔗 [GitHub Repository](https://github.com/AhmedKhaledYaseen/Code-Mentor)
 
