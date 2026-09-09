@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Ahmed Khaled Yaseen | Frontend Engineer</title>
+  <meta name="description" content="Portfolio of Ahmed Khaled Yaseen, a Frontend Engineer specializing in building scalable, user-focused web applications with React, Next.js, and TypeScript."/>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg"/>
+  <link rel="alternate icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f131d'/%3E%3Crect x='2' y='2' width='60' height='60' rx='14' fill='%23171b26' stroke='%232563eb' stroke-width='3'/%3E%3Ctext x='32' y='40' font-family='monospace' font-size='18' font-weight='800' fill='%237bd0ff' text-anchor='middle'%3E%26lt%3BAK/%26gt%3B%3C/text%3E%3C/svg%3E"/>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'surface': '#0f131d',
+            'surface-dim': '#0f131d',
+            'surface-bright': '#353944',
+            'surface-container-lowest': '#0a0e18',
+            'surface-container-low': '#171b26',
+            'surface-container': '#1c1f2a',
+            'surface-container-high': '#262a35',
+            'surface-container-highest': '#313540',
+            'on-surface': '#dfe2f1',
+            'on-surface-variant': '#c3c6d7',
+            'inverse-surface': '#dfe2f1',
+            'inverse-on-surface': '#2c303b',
+            'outline': '#8d90a0',
+            'outline-variant': '#434655',
+            'surface-tint': '#b4c5ff',
+            'primary': '#b4c5ff',
+            'on-primary': '#002a78',
+            'primary-container': '#2563eb',
+            'on-primary-container': '#eeefff',
+            'inverse-primary': '#0053db',
+            'secondary': '#7bd0ff',
+            'on-secondary': '#00354a',
+            'secondary-container': '#00a6e0',
+            'on-secondary-container': '#00374d',
+            'tertiary': '#a4c9ff',
+            'on-tertiary': '#00315d',
+            'tertiary-container': '#196fc0',
+            'on-tertiary-container': '#ebf1ff',
+            'background': '#0f131d',
+            'on-background': '#dfe2f1'
+          },
+          fontFamily: {
+            'headline': ['Plus Jakarta Sans', 'sans-serif'],
+            'body': ['Plus Jakarta Sans', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace']
+          },
+          spacing: {
+            'gutter-mobile': '1.25rem',
+            'gutter-desktop': '2rem'
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container selection:text-on-primary relative overflow-x-hidden min-h-screen">
+  
+  <!-- Ambient Atmospheric Glows -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-primary-container/10 rounded-full blur-[140px]"></div>
+    <div class="absolute top-1/3 -left-48 w-[600px] h-[600px] bg-secondary-container/10 rounded-full blur-[160px]"></div>
+    <div class="absolute bottom-1/4 -right-48 w-[700px] h-[700px] bg-tertiary-container/10 rounded-full blur-[180px]"></div>
+  </div>
+
+  <!-- Sticky Elegant Header Navigation -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl border-b border-surface-container-high/40 transition-all duration-300">
+    <div class="h-20 max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a class="flex items-center gap-3 group focus:outline-none" href="#hero">
+        <div class="inline-flex items-center justify-center w-auto min-w-[54px] px-3 h-10 rounded-xl bg-surface-container-high border border-outline-variant/30 transition-transform duration-300 group-hover:scale-105 group-hover:border-secondary/40 shadow-[0_0_16px_rgba(37,99,235,0.25)] shrink-0">
+          <span class="font-mono text-xs font-bold text-secondary whitespace-nowrap tracking-tight leading-none select-none">&lt;AK&nbsp;/&gt;</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base font-bold tracking-tight text-on-surface leading-tight group-hover:text-primary transition-colors">Ahmed Khaled</span>
+          <span class="font-mono text-[11px] text-outline tracking-wider uppercase">Frontend Engineer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav id="desktop-nav" class="hidden lg:flex items-center gap-1 p-1.5 bg-surface-container-lowest/70 border border-outline-variant/30 rounded-xl backdrop-blur-md">
+        <a class="px-3.5 py-1.5 transition-colors text-sm font-medium rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" href="#about">About</a>
+        <a class="px-3.5 py-1.5 transition-colors text-sm font-medium rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" href="#skills">Skills</a>
+        <a class="px-3.5 py-1.5 transition-colors text-sm font-medium rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" href="#projects">Projects</a>
+        <a class="px-3.5 py-1.5 transition-colors text-sm font-medium rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" href="#education">Education</a>
+        <a class="px-3.5 py-1.5 transition-colors text-sm font-medium rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" href="#certifications">Certificates</a>
+        <a class="px-3.5 py-1.5 transition-colors text-sm font-medium rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" href="#contact">Contact</a>
+      </nav>
+
+      <!-- Header CTA & Mobile Hamburger -->
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary font-medium text-sm rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-[0_0_20px_rgba(37,99,235,0.35)] active:scale-95" href="#contact">
+          <span class="material-symbols-outlined text-[18px]">send</span>
+          <span>Hire Me</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-menu-btn" aria-label="Open Mobile Menu" class="lg:hidden w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface hover:text-secondary transition-colors focus:outline-none border border-outline-variant/30">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu (Responsive Overlay) -->
+  <div id="mobile-menu-drawer" class="fixed inset-0 z-50 hidden opacity-0 pointer-events-none transition-opacity duration-300">
+    <!-- Backdrop overlay -->
+    <div class="absolute inset-0 bg-surface-container-lowest/80 backdrop-blur-md" onclick="document.getElementById('mobile-menu-close-btn').click()"></div>
+    
+    <!-- Drawer Panel -->
+    <div class="drawer-panel absolute top-0 right-0 w-4/5 max-w-sm h-full bg-surface-container-low border-l border-outline-variant/30 p-6 flex flex-col justify-between shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center justify-between pb-4 border-b border-surface-container-high">
+          <div class="flex items-center gap-2">
+            <span class="font-mono text-xs font-bold text-secondary whitespace-nowrap">&lt;AK&nbsp;/&gt;</span>
+            <span class="font-bold text-on-surface text-sm">Navigation</span>
+          </div>
+          <button id="mobile-menu-close-btn" aria-label="Close Menu" class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface hover:text-secondary">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-2">
+          <a class="mobile-nav-link px-4 py-2.5 rounded-xl text-on-surface hover:bg-surface-container-high hover:text-secondary transition-colors flex items-center justify-between" href="#hero">
+            <span>Home</span>
+            <span class="material-symbols-outlined text-[18px] text-outline">arrow_forward</span>
+          </a>
+          <a class="mobile-nav-link px-4 py-2.5 rounded-xl text-on-surface hover:bg-surface-container-high hover:text-secondary transition-colors flex items-center justify-between" href="#about">
+            <span>About Me</span>
+            <span class="material-symbols-outlined text-[18px] text-outline">arrow_forward</span>
+          </a>
+          <a class="mobile-nav-link px-4 py-2.5 rounded-xl text-on-surface hover:bg-surface-container-high hover:text-secondary transition-colors flex items-center justify-between" href="#skills">
+            <span>Skills / Tech Stack</span>
+            <span class="material-symbols-outlined text-[18px] text-outline">arrow_forward</span>
+          </a>
+          <a class="mobile-nav-link px-4 py-2.5 rounded-xl text-on-surface hover:bg-surface-container-high hover:text-secondary transition-colors flex items-center justify-between" href="#projects">
+            <span>Featured Projects</span>
+            <span class="material-symbols-outlined text-[18px] text-outline">arrow_forward</span>
+          </a>
+          <a class="mobile-nav-link px-4 py-2.5 rounded-xl text-on-surface hover:bg-surface-container-high hover:text-secondary transition-colors flex items-center justify-between" href="#education">
+            <span>Education &amp; Training</span>
+            <span class="material-symbols-outlined text-[18px] text-outline">arrow_forward</span>
+          </a>
+          <a class="mobile-nav-link px-4 py-2.5 rounded-xl text-on-surface hover:bg-surface-container-high hover:text-secondary transition-colors flex items-center justify-between" href="#certifications">
+            <span>Certifications</span>
+            <span class="material-symbols-outlined text-[18px] text-outline">arrow_forward</span>
+          </a>
+          <a class="mobile-nav-link px-4 py-2.5 rounded-xl text-on-surface hover:bg-surface-container-high hover:text-secondary transition-colors flex items-center justify-between" href="#contact">
+            <span>Contact</span>
+            <span class="material-symbols-outlined text-[18px] text-outline">arrow_forward</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="pt-6 border-t border-surface-container-high flex flex-col gap-3">
+        <a class="w-full py-3 bg-primary-container text-on-primary text-center font-semibold rounded-xl hover:bg-secondary-container transition-all" href="#contact">
+          Let’s Work Together
+        </a>
+        <div class="flex items-center justify-center gap-4 text-outline pt-2">
+          <a href="https://github.com/AhmedKhaledYaseen" target="_blank" rel="noopener noreferrer" class="hover:text-secondary">GitHub</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/ahmed-khaled125" target="_blank" rel="noopener noreferrer" class="hover:text-secondary">LinkedIn</a>
+          <span>•</span>
+          <a href="https://wa.me/201120610902" target="_blank" rel="noopener noreferrer" class="hover:text-secondary">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <main class="relative z-10 w-full pt-20">
+    <div class="w-full max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+
+      <!-- ============================================================= -->
+      <!-- 1. HERO SECTION                                               -->
+      <!-- ============================================================= -->
+      <section class="relative pt-10 sm:pt-16 lg:pt-24 pb-20 lg:pb-28" id="hero">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Left Column: Intro & Headline -->
+          <div class="lg:col-span-7 flex flex-col items-start gap-6">
+            
+            <!-- Availability Pill -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/90 border border-secondary/20 backdrop-blur-md shadow-sm">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+              </span>
+              <span class="font-mono text-xs uppercase tracking-wider text-secondary font-semibold">
+                Available for Internships &amp; Full-Time Roles
+              </span>
+            </div>
+
+            <!-- Main Heading -->
+            <div class="flex flex-col gap-2">
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-on-surface leading-tight">
+                Hi, I’m <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary-container">Ahmed Khaled Yaseen</span>
+              </h1>
+              <p class="text-2xl sm:text-3xl font-bold text-secondary">
+                Frontend Engineer
+              </p>
+              <p class="text-lg sm:text-xl text-on-surface-variant font-medium mt-1 leading-relaxed">
+                “Building scalable, user-focused web applications”
+              </p>
+            </div>
+
+            <!-- Supporting Line Credential Pill -->
+            <div class="flex items-center flex-wrap gap-2.5 p-2.5 px-4 rounded-xl bg-surface-container-low/80 border border-outline-variant/30 backdrop-blur-md text-on-surface-variant shadow-sm">
+              <span class="material-symbols-outlined text-secondary text-[20px]">school</span>
+              <span class="font-mono text-sm text-on-surface font-medium">CS Student at Benha University</span>
+              <span class="px-2 py-0.5 rounded bg-primary-container/20 text-secondary font-mono text-xs font-bold border border-secondary/30">GPA 3.83</span>
+            </div>
+
+            <!-- Distinction Highlights Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full pt-1">
+              <div class="flex flex-col p-3.5 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 backdrop-blur-sm shadow-sm">
+                <span class="text-2xl font-extrabold text-secondary font-mono">3.83</span>
+                <span class="font-mono text-[11px] text-outline uppercase tracking-wider mt-1">Cumulative GPA</span>
+              </div>
+              <div class="flex flex-col p-3.5 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 backdrop-blur-sm shadow-sm">
+                <span class="text-2xl font-extrabold text-primary font-mono">10+</span>
+                <span class="font-mono text-[11px] text-outline uppercase tracking-wider mt-1">Tech Stack</span>
+              </div>
+              <div class="flex flex-col p-3.5 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 backdrop-blur-sm shadow-sm">
+                <span class="text-2xl font-extrabold text-secondary font-mono">3+</span>
+                <span class="font-mono text-[11px] text-outline uppercase tracking-wider mt-1">Featured Apps</span>
+              </div>
+              <div class="flex flex-col p-3.5 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 backdrop-blur-sm shadow-sm">
+                <span class="text-2xl font-extrabold text-primary font-mono">90%</span>
+                <span class="font-mono text-[11px] text-outline uppercase tracking-wider mt-1">NTI Honors</span>
+              </div>
+            </div>
+
+            <!-- Primary CTAs & Social Links -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a class="inline-flex items-center gap-2 px-6 py-3 bg-primary-container text-on-primary font-semibold text-base rounded-xl hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-[0_0_24px_rgba(37,99,235,0.4)] active:scale-95" href="#projects">
+                <span>View My Work</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+              </a>
+              <a class="inline-flex items-center gap-2 px-6 py-3 bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface border border-outline-variant/30 font-medium text-base rounded-xl transition-all shadow-sm active:scale-95" href="#contact">
+                <span>Contact Me</span>
+                <span class="material-symbols-outlined text-[18px]">mail</span>
+              </a>
+              <div class="flex items-center gap-2 sm:pl-2">
+                <a aria-label="GitHub Profile" class="w-11 h-11 rounded-xl bg-surface-container-high/60 border border-outline-variant/30 hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-secondary transition-all shadow-sm" href="https://github.com/AhmedKhaledYaseen" rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-[20px]">code</span>
+                </a>
+                <a aria-label="LinkedIn Profile" class="w-11 h-11 rounded-xl bg-surface-container-high/60 border border-outline-variant/30 hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-secondary transition-all shadow-sm" href="https://www.linkedin.com/in/ahmed-khaled125" rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-[20px]">work</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Right Column: Ahmed's Professional Photo & Orbital Chips -->
+          <div class="lg:col-span-5 relative flex items-center justify-center pt-6 lg:pt-0">
+            <div class="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl p-3 bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-2xl shadow-2xl flex items-center justify-center group">
+              
+              <!-- Background Radial Glow -->
+              <div class="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-tr from-primary-container/30 via-secondary-container/20 to-transparent blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
+              
+              <!-- Portrait Frame -->
+              <div class="w-full h-full rounded-2xl overflow-hidden relative shadow-inner bg-surface-container-lowest">
+                <img alt="Ahmed Khaled Yaseen - Frontend Engineer" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700 ease-out" src="assets/images/ahmed-portrait.png"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- 2. ABOUT ME SECTION                                           -->
+      <!-- ============================================================= -->
+      <section class="py-20 lg:py-28" id="about">
+        <!-- Section Header -->
+        <div class="flex flex-col items-start gap-2 mb-12">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-[2px] bg-secondary rounded-full"></span>
+            <span class="font-mono text-xs uppercase tracking-widest text-secondary font-bold">ABOUT ME</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-on-surface">
+            Crafting Digital Experiences with Engineering Precision
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- About Left Sidebar: Profile Mini-Card & Vitals -->
+          <div class="lg:col-span-5 flex flex-col gap-6">
+            <div class="p-6 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md shadow-md flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-20 h-20 rounded-2xl overflow-hidden bg-surface-container-highest flex-shrink-0 border border-outline-variant/30 shadow-sm">
+                  <img alt="Ahmed Khaled Yaseen" class="w-full h-full object-cover object-top" src="assets/images/ahmed-portrait.png"/>
+                </div>
+                <div class="flex flex-col">
+                  <h3 class="text-lg font-bold text-on-surface">Ahmed Khaled Yaseen</h3>
+                  <span class="font-mono text-xs text-secondary font-medium">Frontend Engineer • React / Next.js</span>
+                  <span class="font-mono text-[11px] text-outline mt-1">Faculty of Computers &amp; AI • Benha</span>
+                </div>
+              </div>
+
+              <!-- Quick Info Metadata Grid -->
+              <div class="grid grid-cols-2 gap-3 pt-2 border-t border-surface-container-high/60">
+                <div class="p-3 rounded-xl bg-surface-container-high/50 flex flex-col">
+                  <span class="font-mono text-[11px] text-outline uppercase">Location</span>
+                  <span class="text-sm font-semibold text-on-surface mt-1">Cairo, Egypt</span>
+                </div>
+                <div class="p-3 rounded-xl bg-surface-container-high/50 flex flex-col">
+                  <span class="font-mono text-[11px] text-outline uppercase">University</span>
+                  <span class="text-sm font-semibold text-on-surface mt-1">Benha University</span>
+                </div>
+                <div class="p-3 rounded-xl bg-surface-container-high/50 flex flex-col">
+                  <span class="font-mono text-[11px] text-outline uppercase">Academic GPA</span>
+                  <span class="text-sm font-semibold text-secondary mt-1 font-mono">3.83 (Distinction)</span>
+                </div>
+                <div class="p-3 rounded-xl bg-surface-container-high/50 flex flex-col">
+                  <span class="font-mono text-[11px] text-outline uppercase">Availability</span>
+                  <span class="text-sm font-semibold text-secondary mt-1">Open to Opportunities</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Academic Distinction Badge Card -->
+            <div class="p-5 rounded-2xl bg-surface-container-high/40 border border-outline-variant/20 backdrop-blur-sm flex items-center justify-between shadow-sm">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-secondary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+                  <span class="material-symbols-outlined text-[22px]">military_tech</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-sm font-bold text-on-surface">Digital Egypt Youth Honors</span>
+                  <span class="text-xs text-outline">NTI Web Designer Program • Score: 90%</span>
+                </div>
+              </div>
+              <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-secondary/10 border border-secondary/30 text-secondary font-bold">Grade A</span>
+            </div>
+          </div>
+
+          <!-- About Right: Polished Bio & 4 Core Pillars -->
+          <div class="lg:col-span-7 flex flex-col justify-between gap-6">
+            <div class="p-8 rounded-2xl bg-surface-container-low/80 border border-outline-variant/30 backdrop-blur-xl shadow-md">
+              <p class="text-base sm:text-lg text-on-surface-variant leading-relaxed">
+                “I’m <strong class="text-on-surface font-semibold">Ahmed Khaled Yaseen</strong>, a Frontend Engineer and Computer Science student at the Faculty of Computers and Artificial Intelligence, Benha University, with a strong GPA of 3.83. I specialize in building clean, scalable, and user-focused web applications using modern technologies.”
+              </p>
+              <p class="text-base sm:text-lg text-on-surface-variant leading-relaxed mt-4">
+                “Through hands-on projects and intensive training programs, I’ve developed solid skills in React, Next.js, and the broader web ecosystem. I’m passionate about creating high-quality digital experiences and continuously improving my craft. Currently seeking internship and full-time opportunities where I can contribute, grow, and deliver real value.”
+              </p>
+            </div>
+
+            <!-- Core Engineering Pillars Bento -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 rounded-xl bg-surface-container-high/50 border border-outline-variant/20 backdrop-blur-sm shadow-sm flex items-start gap-3 group hover:bg-surface-container-highest transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-primary-container/20 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[20px]">person_check</span>
+                </div>
+                <div class="flex flex-col">
+                  <h4 class="text-sm font-bold text-on-surface">User-Centric Mindset</h4>
+                  <p class="text-xs text-outline mt-1 leading-normal">Deep focus on ergonomics, fluid micro-animations, and intuitive interface workflows.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-surface-container-high/50 border border-outline-variant/20 backdrop-blur-sm shadow-sm flex items-start gap-3 group hover:bg-surface-container-highest transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[20px]">architecture</span>
+                </div>
+                <div class="flex flex-col">
+                  <h4 class="text-sm font-bold text-on-surface">Clean &amp; Scalable Code</h4>
+                  <p class="text-xs text-outline mt-1 leading-normal">Modular component architectures, strict type safety, and maintainable state flows.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-surface-container-high/50 border border-outline-variant/20 backdrop-blur-sm shadow-sm flex items-start gap-3 group hover:bg-surface-container-highest transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-primary-container/20 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[20px]">trending_up</span>
+                </div>
+                <div class="flex flex-col">
+                  <h4 class="text-sm font-bold text-on-surface">Continuous Learning</h4>
+                  <p class="text-xs text-outline mt-1 leading-normal">Rapid adopter of modern web specs, performance profiling, and new web architectures.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-surface-container-high/50 border border-outline-variant/20 backdrop-blur-sm shadow-sm flex items-start gap-3 group hover:bg-surface-container-highest transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[20px]">psychology</span>
+                </div>
+                <div class="flex flex-col">
+                  <h4 class="text-sm font-bold text-on-surface">Analytical Problem Solver</h4>
+                  <p class="text-xs text-outline mt-1 leading-normal">Computer science rigor, algorithmic analysis, and structured debugging methodologies.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- 3. SKILLS / TECH STACK SECTION                                -->
+      <!-- ============================================================= -->
+      <section class="py-20 lg:py-28" id="skills">
+        <!-- Section Header -->
+        <div class="flex flex-col items-start gap-2 mb-12">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-[2px] bg-secondary rounded-full"></span>
+            <span class="font-mono text-xs uppercase tracking-widest text-secondary font-bold">SKILLS &amp; TECH STACK</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-on-surface">
+            Technologies &amp; Tools I Build With
+          </h2>
+          <p class="text-base text-outline max-w-2xl">
+            A targeted toolchain organized with modern badges and cards, optimized for frontend excellence, component scalability, and robust web delivery.
+          </p>
+        </div>
+
+        <!-- 3 Modern Category Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Category 1: Frontend (Primary Focus) -->
+          <div class="p-6 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md shadow-md flex flex-col justify-between relative overflow-hidden group hover:border-secondary/50 transition-all">
+            <div class="flex flex-col gap-5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-xl bg-primary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+                    <span class="material-symbols-outlined text-[22px]">developer_mode_tv</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-on-surface">Frontend</h3>
+                </div>
+                <span class="font-mono text-xs text-secondary font-semibold px-2 py-0.5 rounded bg-secondary/10 border border-secondary/20">Primary</span>
+              </div>
+
+              <!-- Tech Badges Grid -->
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-secondary font-bold hover:border-secondary transition-colors">React</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-secondary font-bold hover:border-secondary transition-colors">Next.js</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-semibold hover:border-secondary transition-colors">TypeScript</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-semibold hover:border-secondary transition-colors">JavaScript (ES6+)</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-semibold hover:border-secondary transition-colors">HTML5</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-semibold hover:border-secondary transition-colors">CSS3</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-secondary font-bold hover:border-secondary transition-colors">Tailwind CSS</span>
+              </div>
+
+              <!-- Visual Proficiency Bars -->
+              <div class="flex flex-col gap-3 pt-3 border-t border-surface-container-high/60">
+                <div class="flex flex-col gap-1">
+                  <div class="flex justify-between font-mono text-xs">
+                    <span class="text-on-surface">React &amp; Next.js Ecosystem</span>
+                    <span class="text-secondary font-bold">95%</span>
+                  </div>
+                  <div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-primary-container to-secondary rounded-full" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex justify-between font-mono text-xs">
+                    <span class="text-on-surface">TypeScript &amp; Clean UI Architecture</span>
+                    <span class="text-secondary font-bold">92%</span>
+                  </div>
+                  <div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-primary-container to-secondary rounded-full" style="width: 92%"></div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex justify-between font-mono text-xs">
+                    <span class="text-on-surface">Tailwind CSS &amp; Modern Styling</span>
+                    <span class="text-secondary font-bold">96%</span>
+                  </div>
+                  <div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-primary-container to-secondary rounded-full" style="width: 96%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-surface-container-high/50 border border-outline-variant/20 flex items-center justify-between mt-6">
+              <span class="font-mono text-xs text-outline">Frontend Paradigm</span>
+              <span class="font-mono text-xs text-secondary font-bold">Component-Driven</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Backend & Tools -->
+          <div class="p-6 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md shadow-md flex flex-col justify-between relative overflow-hidden group hover:border-primary/50 transition-all">
+            <div class="flex flex-col gap-5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-xl bg-primary-container/20 border border-primary/30 flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-[22px]">database</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-on-surface">Backend &amp; Tools</h3>
+                </div>
+                <span class="font-mono text-xs text-primary font-semibold px-2 py-0.5 rounded bg-primary/10 border border-primary/20">Full Toolkit</span>
+              </div>
+
+              <!-- Tech Badges Grid -->
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-semibold hover:border-primary transition-colors">Node.js</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-semibold hover:border-primary transition-colors">MongoDB</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-semibold hover:border-primary transition-colors">MySQL</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-semibold hover:border-primary transition-colors">PHP</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-semibold hover:border-primary transition-colors">WordPress</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-primary font-bold hover:border-primary transition-colors">Git &amp; GitHub</span>
+              </div>
+
+              <!-- Visual Proficiency Bars -->
+              <div class="flex flex-col gap-3 pt-3 border-t border-surface-container-high/60">
+                <div class="flex flex-col gap-1">
+                  <div class="flex justify-between font-mono text-xs">
+                    <span class="text-on-surface">Git, Branching &amp; GitHub Flow</span>
+                    <span class="text-primary font-bold">92%</span>
+                  </div>
+                  <div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-primary-container to-primary-fixed rounded-full" style="width: 92%"></div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex justify-between font-mono text-xs">
+                    <span class="text-on-surface">RESTful APIs &amp; Node.js Services</span>
+                    <span class="text-primary font-bold">82%</span>
+                  </div>
+                  <div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-primary-container to-primary-fixed rounded-full" style="width: 82%"></div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex justify-between font-mono text-xs">
+                    <span class="text-on-surface">Database (MongoDB / MySQL)</span>
+                    <span class="text-primary font-bold">80%</span>
+                  </div>
+                  <div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-primary-container to-primary-fixed rounded-full" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-surface-container-high/50 border border-outline-variant/20 flex items-center justify-between mt-6">
+              <span class="font-mono text-xs text-outline">Workflow Tools</span>
+              <span class="font-mono text-xs text-primary font-bold">Vite • Postman • Vercel</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Other Core Competencies -->
+          <div class="p-6 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md shadow-md flex flex-col justify-between relative overflow-hidden group hover:border-secondary/50 transition-all">
+            <div class="flex flex-col gap-5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-xl bg-primary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+                    <span class="material-symbols-outlined text-[22px]">hub</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-on-surface">Core Competencies</h3>
+                </div>
+                <span class="font-mono text-xs text-secondary font-semibold px-2 py-0.5 rounded bg-secondary/10 border border-secondary/20">Engineering</span>
+              </div>
+
+              <!-- Core Highlights List -->
+              <div class="flex flex-col gap-2.5 pt-1">
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-high/50 border border-outline-variant/20">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">devices</span>
+                  <span class="text-sm font-semibold text-on-surface">Responsive Design (Mobile-First)</span>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-high/50 border border-outline-variant/20">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">design_services</span>
+                  <span class="text-sm font-semibold text-on-surface">UI/UX Interaction Fundamentals</span>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-high/50 border border-outline-variant/20">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">lightbulb</span>
+                  <span class="text-sm font-semibold text-on-surface">Algorithmic Problem Solving</span>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-high/50 border border-outline-variant/20">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">speed</span>
+                  <span class="text-sm font-semibold text-on-surface">Performance &amp; Asset Optimization</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-surface-container-high/50 border border-outline-variant/20 flex items-center justify-between mt-6">
+              <span class="font-mono text-xs text-outline">Code Standards</span>
+              <span class="font-mono text-xs text-secondary font-bold">Clean Code • Accessibility</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- 4. FEATURED PROJECTS SECTION                                  -->
+      <!-- ============================================================= -->
+      <section class="py-20 lg:py-28" id="projects">
+        <!-- Section Header -->
+        <div class="flex flex-col items-start gap-2 mb-12">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-[2px] bg-secondary rounded-full"></span>
+            <span class="font-mono text-xs uppercase tracking-widest text-secondary font-bold">FEATURED PROJECTS</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-on-surface">
+            Showcase of Selected Work
+          </h2>
+          <p class="text-base text-outline max-w-2xl">
+            Clean project cards highlighting real-world frontend applications with live demos, code repositories, and modern engineering stacks.
+          </p>
+        </div>
+
+        <!-- Project Cards Grid / Stack -->
+        <div class="flex flex-col gap-10">
+
+          <!-- Project 1: Code-Mentor (Graduation Project) -->
+          <article class="p-6 lg:p-8 rounded-3xl bg-surface-container-low/75 border border-outline-variant/30 backdrop-blur-xl shadow-lg transition-all duration-300 hover:border-secondary/40 hover:shadow-2xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <!-- Project Image Preview -->
+              <div class="lg:col-span-7 relative group rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest border border-outline-variant/20">
+                <div class="aspect-[16/9] w-full overflow-hidden">
+                  <img alt="Code-Mentor AI Platform Preview" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="assets/images/code-mentor.png"/>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+
+              <!-- Project Info -->
+              <div class="lg:col-span-5 flex flex-col items-start gap-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/20 text-secondary font-mono text-xs uppercase tracking-wider font-bold border border-secondary/30">
+                  <span class="material-symbols-outlined text-[15px]">psychology</span>
+                  <span>Graduation Project</span>
+                </div>
+
+                <h3 class="text-2xl font-bold text-on-surface">
+                  Code-Mentor
+                </h3>
+                <p class="text-sm font-semibold text-secondary -mt-2">
+                  AI-Powered Code Review &amp; Learning Platform
+                </p>
+
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                  Features adaptive assessment, multi-agent code review, and personalized learning paths designed to accelerate programming mastery with automated real-time feedback.
+                </p>
+
+                <!-- Tech Badges -->
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-secondary font-semibold">React</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-medium">.NET</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-medium">FastAPI</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-secondary font-semibold">AI integration</span>
+                </div>
+
+                <!-- Action Button -->
+                <div class="flex flex-wrap items-center gap-3 pt-2 w-full">
+                  <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary font-semibold text-sm rounded-xl hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-sm active:scale-95" href="https://github.com/AhmedKhaledYaseen/Code-Mentor" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[18px]">code</span>
+                    <span>GitHub Repository</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- Project 2: TimeZone-Store -->
+          <article class="p-6 lg:p-8 rounded-3xl bg-surface-container-low/75 border border-outline-variant/30 backdrop-blur-xl shadow-lg transition-all duration-300 hover:border-secondary/40 hover:shadow-2xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <!-- Project Image Preview (Asymmetrical Desktop Swap) -->
+              <div class="lg:col-span-7 lg:order-2 relative group rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest border border-outline-variant/20">
+                <div class="aspect-[16/9] w-full overflow-hidden">
+                  <img alt="TimeZone-Store Luxury Watch UI Preview" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="assets/images/timezone-store.png"/>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+
+              <!-- Project Info -->
+              <div class="lg:col-span-5 lg:order-1 flex flex-col items-start gap-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/20 text-secondary font-mono text-xs uppercase tracking-wider font-bold border border-secondary/30">
+                  <span class="material-symbols-outlined text-[15px]">watch</span>
+                  <span>E-Commerce • Luxury UI</span>
+                </div>
+
+                <h3 class="text-2xl font-bold text-on-surface">
+                  TimeZone-Store
+                </h3>
+                <p class="text-sm font-semibold text-secondary -mt-2">
+                  Modern Luxury Watch E-Commerce
+                </p>
+
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                  Modern luxury watch e-commerce landing page with glassmorphism design, interactive cart &amp; wishlist, dynamic product filters, and micro-interactions.
+                </p>
+
+                <!-- Tech Badges -->
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-secondary font-semibold">React</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-secondary font-semibold">Next.js</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-medium">Tailwind CSS</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-medium">Glassmorphism UI</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-medium">Context API</span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center gap-3 pt-2 w-full">
+                  <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary font-semibold text-sm rounded-xl hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-sm active:scale-95" href="https://timezone-store.vercel.app/" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                    <span>Live Demo</span>
+                  </a>
+                  <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-surface-container-high/80 hover:bg-surface-container-highest border border-outline-variant/30 text-on-surface font-medium text-sm rounded-xl transition-colors" href="https://github.com/AhmedKhaledYaseen/TimeZone-Store" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[18px]">code</span>
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- Project 3: Velora-Store -->
+          <article class="p-6 lg:p-8 rounded-3xl bg-surface-container-low/75 border border-outline-variant/30 backdrop-blur-xl shadow-lg transition-all duration-300 hover:border-secondary/40 hover:shadow-2xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <!-- Project Image Preview -->
+              <div class="lg:col-span-7 relative group rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest border border-outline-variant/20">
+                <div class="aspect-[16/9] w-full overflow-hidden">
+                  <img alt="Velora-Store Apparel Preview" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="assets/images/velora-store.png"/>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+
+              <!-- Project Info -->
+              <div class="lg:col-span-5 flex flex-col items-start gap-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/20 text-secondary font-mono text-xs uppercase tracking-wider font-bold border border-secondary/30">
+                  <span class="material-symbols-outlined text-[15px]">shopping_bag</span>
+                  <span>Web Storefront</span>
+                </div>
+
+                <h3 class="text-2xl font-bold text-on-surface">
+                  Velora-Store
+                </h3>
+                <p class="text-sm font-semibold text-secondary -mt-2">
+                  Modern React + Vite E-Commerce Store
+                </p>
+
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                  Modern React + Vite e-commerce store with intuitive category filtering, reactive search state, and responsive checkout UI built for fast loading and seamless user experience.
+                </p>
+
+                <!-- Tech Badges -->
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-secondary font-semibold">React</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-medium">Vite</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-medium">Tailwind CSS</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high border border-outline-variant/30 font-mono text-xs text-on-surface font-medium">State Management</span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center gap-3 pt-2 w-full">
+                  <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary font-semibold text-sm rounded-xl hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-sm active:scale-95" href="https://velora-store-tawny-nine.vercel.app/" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                    <span>Live Demo</span>
+                  </a>
+                  <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-surface-container-high/80 hover:bg-surface-container-highest border border-outline-variant/30 text-on-surface font-medium text-sm rounded-xl transition-colors" href="https://github.com/AhmedKhaledYaseen/Velora-Store" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[18px]">code</span>
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- 5. EDUCATION & TRAINING SECTION                               -->
+      <!-- ============================================================= -->
+      <section class="py-20 lg:py-28" id="education">
+        <!-- Section Header -->
+        <div class="flex flex-col items-start gap-2 mb-12">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-[2px] bg-secondary rounded-full"></span>
+            <span class="font-mono text-xs uppercase tracking-widest text-secondary font-bold">ACADEMIC &amp; INTENSIVE TRAINING</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-on-surface">
+            Education &amp; Training
+          </h2>
+          <p class="text-base text-outline max-w-2xl">
+            Rigorous academic foundations in Computer Science paired with intensive professional institute training.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Education Card 1: University Degree -->
+          <div class="p-8 rounded-3xl bg-surface-container-low/80 border border-outline-variant/30 backdrop-blur-xl shadow-md flex flex-col justify-between gap-6 group hover:border-secondary/40 transition-all">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-start justify-between">
+                <div class="w-12 h-12 rounded-2xl bg-primary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+                  <span class="material-symbols-outlined text-[26px]">school</span>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-secondary-container/20 border border-secondary/30 text-secondary font-mono text-xs font-bold">
+                  GPA: 3.83
+                </span>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h3 class="text-xl font-bold text-on-surface">
+                  Bachelor of Computer Science
+                </h3>
+                <p class="text-sm text-secondary font-medium">
+                  Faculty of Computers and Artificial Intelligence – Benha University
+                </p>
+              </div>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Strong focus on Data Structures, Algorithms, Object-Oriented Software Engineering, Database Systems, Computer Architecture, and Artificial Intelligence foundations with distinction standing.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 p-3 rounded-xl bg-surface-container-high/40 border border-outline-variant/20">
+              <span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+              <span class="font-mono text-xs uppercase tracking-wider text-on-surface font-semibold">Faculty of Computers &amp; AI • Benha University</span>
+            </div>
+          </div>
+
+          <!-- Education Card 2: NTI Web Designer Program -->
+          <div class="p-8 rounded-3xl bg-surface-container-low/80 border border-outline-variant/30 backdrop-blur-xl shadow-md flex flex-col justify-between gap-6 group hover:border-secondary/40 transition-all">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-start justify-between">
+                <div class="w-12 h-12 rounded-2xl bg-secondary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+                  <span class="material-symbols-outlined text-[26px]">terminal</span>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-primary-container/20 border border-secondary/30 text-secondary font-mono text-xs font-bold">
+                  Score: 90%
+                </span>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h3 class="text-xl font-bold text-on-surface">
+                  Digital Egypt Youth Program – Web Designer
+                </h3>
+                <p class="text-sm text-secondary font-medium">
+                  National Telecommunication Institute (NTI)
+                </p>
+                <span class="font-mono text-xs text-outline">May – June 2025 | 120 hours (90 technical + 30 freelancing)</span>
+              </div>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Completed 120 intensive hours comprised of 90 technical hours in modern web layouts, responsive architecture, JavaScript programming, and web design workflows, along with 30 hours of freelancing and client communication.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 p-3 rounded-xl bg-surface-container-high/40 border border-outline-variant/20">
+              <span class="material-symbols-outlined text-secondary text-[18px]">military_tech</span>
+              <span class="font-mono text-xs uppercase tracking-wider text-on-surface font-semibold">National Telecommunication Institute (NTI)</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- 6. CERTIFICATES SECTION                                       -->
+      <!-- ============================================================= -->
+      <section class="py-20 lg:py-28" id="certifications">
+        <!-- Section Header -->
+        <div class="flex flex-col items-start gap-2 mb-12">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-[2px] bg-secondary rounded-full"></span>
+            <span class="font-mono text-xs uppercase tracking-widest text-secondary font-bold">VERIFIED CREDENTIALS</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-on-surface">
+            Certificates
+          </h2>
+          <p class="text-base text-outline max-w-2xl">
+            Accreditations demonstrating commitment to professional continuous learning, collaborative Git workflows, and modern web craft.
+          </p>
+        </div>
+
+        <!-- Clean Grid of Certificate Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Certificate 1: McKinsey Forward -->
+          <div class="p-6 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md shadow-md flex flex-col justify-between gap-4 group hover:border-secondary/50 hover:bg-surface-container-high/60 transition-all">
+            <div class="flex flex-col gap-3">
+              <div class="w-10 h-10 rounded-xl bg-primary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+              </div>
+              <span class="font-mono text-xs text-outline uppercase tracking-wider">McKinsey.org</span>
+              <h3 class="text-lg font-bold text-on-surface">
+                Forward Program
+              </h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Focused on Soft Skills, Structured Problem Solving, Adaptability &amp; the Future of Work.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-surface-container-high/60 font-mono text-xs text-outline">
+              <span>June 2026</span>
+              <span class="text-secondary font-bold">Verified</span>
+            </div>
+          </div>
+
+          <!-- Certificate 2: Git and GitHub -->
+          <div class="p-6 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md shadow-md flex flex-col justify-between gap-4 group hover:border-secondary/50 hover:bg-surface-container-high/60 transition-all">
+            <div class="flex flex-col gap-3">
+              <div class="w-10 h-10 rounded-xl bg-secondary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined text-[22px]">merge_type</span>
+              </div>
+              <span class="font-mono text-xs text-outline uppercase tracking-wider">Almdrasa</span>
+              <h3 class="text-lg font-bold text-on-surface">
+                Git and GitHub Certificate
+              </h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Version control systems, branch strategies, collaborative pull requests, and Git Flow workflows.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-surface-container-high/60 font-mono text-xs text-outline">
+              <span>Almdrasa Track</span>
+              <span class="text-secondary font-bold">Verified</span>
+            </div>
+          </div>
+
+          <!-- Certificate 3: NTI Web Designer -->
+          <div class="p-6 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md shadow-md flex flex-col justify-between gap-4 group hover:border-secondary/50 hover:bg-surface-container-high/60 transition-all">
+            <div class="flex flex-col gap-3">
+              <div class="w-10 h-10 rounded-xl bg-primary-container/20 border border-primary/30 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-[22px]">auto_stories</span>
+              </div>
+              <span class="font-mono text-xs text-outline uppercase tracking-wider">NTI (Digital Egypt Youth)</span>
+              <h3 class="text-lg font-bold text-on-surface">
+                Web Designer Certification
+              </h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Digital Egypt Youth Program accreditation with distinction honors score of 90%.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-surface-container-high/60 font-mono text-xs text-outline">
+              <span>Score: 90%</span>
+              <span class="text-secondary font-bold">Distinction</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- 7. CONTACT SECTION                                            -->
+      <!-- ============================================================= -->
+      <section class="py-20 lg:py-28" id="contact">
+        <!-- Section Header -->
+        <div class="flex flex-col items-start gap-2 mb-12">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-[2px] bg-secondary rounded-full"></span>
+            <span class="font-mono text-xs uppercase tracking-widest text-secondary font-bold">GET IN TOUCH</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-on-surface">
+            Let’s work together
+          </h2>
+          <p class="text-base text-outline max-w-2xl">
+            Have a project, a frontend engineering role, or an internship opportunity? Reach out directly via email, WhatsApp, or through the message form below.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Contact Left: Direct Contact Information Cards -->
+          <div class="lg:col-span-5 flex flex-col gap-5">
+            
+            <!-- Email Card -->
+            <div class="p-6 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md shadow-md flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-9 h-9 rounded-lg bg-primary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+                    <span class="material-symbols-outlined text-[20px]">mail</span>
+                  </div>
+                  <span class="font-mono text-xs text-outline uppercase tracking-wider">Direct Email</span>
+                </div>
+                <button onclick="copyEmail('ahmed.khaled2011k@gmail.com')" class="p-2 rounded-lg hover:bg-surface-container-highest text-on-surface-variant hover:text-secondary transition-colors" title="Copy Email">
+                  <span class="material-symbols-outlined text-[18px]">content_copy</span>
+                </button>
+              </div>
+              <a class="text-base font-bold text-on-surface hover:text-secondary transition-colors break-all" href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmed.khaled2011k@gmail.com" target="_blank" rel="noopener noreferrer">
+                ahmed.khaled2011k@gmail.com
+              </a>
+              <p class="text-xs text-outline">Open for software engineering internships and full-time opportunities.</p>
+            </div>
+
+            <!-- Phone / WhatsApp Card -->
+            <div class="p-6 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md shadow-md flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-9 h-9 rounded-lg bg-secondary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+                    <span class="material-symbols-outlined text-[20px]">chat</span>
+                  </div>
+                  <span class="font-mono text-xs text-outline uppercase tracking-wider">Phone / WhatsApp</span>
+                </div>
+                <a class="font-mono text-xs text-secondary hover:underline flex items-center gap-1" href="https://wa.me/201120610902" target="_blank" rel="noopener noreferrer">
+                  <span>Chat</span>
+                  <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+              <a class="text-base font-bold text-on-surface hover:text-secondary transition-colors" href="https://wa.me/201120610902" target="_blank" rel="noopener noreferrer">
+                +20 112 061 0902
+              </a>
+              <p class="text-xs text-outline">Available for rapid collaboration and professional chats.</p>
+            </div>
+
+            <!-- Social Profiles Card -->
+            <div class="p-6 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md shadow-md flex flex-col gap-3">
+              <span class="font-mono text-xs text-outline uppercase tracking-wider">Online Presence</span>
+              <div class="flex flex-col gap-2.5 pt-1">
+                <a class="flex items-center justify-between p-3 rounded-xl bg-surface-container-high/50 border border-outline-variant/20 hover:bg-surface-container-highest transition-colors group" href="https://github.com/AhmedKhaledYaseen" target="_blank" rel="noopener noreferrer">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-secondary text-[20px]">code</span>
+                    <div class="flex flex-col">
+                      <span class="text-sm font-semibold text-on-surface">GitHub</span>
+                      <span class="font-mono text-xs text-outline">@AhmedKhaledYaseen</span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+                </a>
+
+                <a class="flex items-center justify-between p-3 rounded-xl bg-surface-container-high/50 border border-outline-variant/20 hover:bg-surface-container-highest transition-colors group" href="https://www.linkedin.com/in/ahmed-khaled125" target="_blank" rel="noopener noreferrer">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-[20px]">work</span>
+                    <div class="flex flex-col">
+                      <span class="text-sm font-semibold text-on-surface">LinkedIn</span>
+                      <span class="font-mono text-xs text-outline">in/ahmed-khaled125</span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Contact Right: Sleek Contact Form -->
+          <div class="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-surface-container-low/80 border border-outline-variant/30 backdrop-blur-xl shadow-lg">
+            <form id="contact-form" action="https://formsubmit.co/ahmed.khaled2011k@gmail.com" method="POST" class="flex flex-col gap-5">
+              <!-- FormSubmit Gmail Configuration -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="text" name="_honey" style="display:none">
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="flex flex-col gap-1.5">
+                  <label class="font-mono text-xs text-outline uppercase tracking-wider" for="name">Your Name</label>
+                  <input name="name" class="px-4 py-3 rounded-xl bg-surface-container-highest/60 border border-outline-variant/20 text-on-surface placeholder:text-outline text-sm focus:outline-none focus:border-secondary transition-all" id="name" placeholder="e.g. Hiring Team / Recruiter" required="" type="text"/>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label class="font-mono text-xs text-outline uppercase tracking-wider" for="email">Email Address</label>
+                  <input name="email" class="px-4 py-3 rounded-xl bg-surface-container-highest/60 border border-outline-variant/20 text-on-surface placeholder:text-outline text-sm focus:outline-none focus:border-secondary transition-all" id="email" placeholder="e.g. recruiter@company.com" required="" type="email"/>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <label class="font-mono text-xs text-outline uppercase tracking-wider" for="subject">Subject</label>
+                <input name="_subject" class="px-4 py-3 rounded-xl bg-surface-container-highest/60 border border-outline-variant/20 text-on-surface placeholder:text-outline text-sm focus:outline-none focus:border-secondary transition-all" id="subject" placeholder="Frontend Engineering Opportunity / Project Discussion" required="" type="text"/>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <label class="font-mono text-xs text-outline uppercase tracking-wider" for="message">Message</label>
+                <textarea name="message" class="px-4 py-3 rounded-xl bg-surface-container-highest/60 border border-outline-variant/20 text-on-surface placeholder:text-outline text-sm focus:outline-none focus:border-secondary transition-all resize-none" id="message" placeholder="Details about the role, team, or project requirements..." required="" rows="4"></textarea>
+              </div>
+              
+              <button id="submit-btn" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-primary-container text-on-primary font-semibold text-sm rounded-xl hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-[0_0_24px_rgba(37,99,235,0.4)] active:scale-95 cursor-pointer mt-1" type="submit">
+                <span id="submit-btn-text">Send Message</span>
+                <span id="submit-btn-icon" class="material-symbols-outlined text-[18px]">send</span>
+              </button>
+
+              <!-- Form Confirmation Message -->
+              <div class="hidden p-4 rounded-xl bg-secondary-container/20 border border-secondary/40 text-secondary font-mono text-xs text-center leading-relaxed" id="form-feedback">
+                <div class="flex items-center justify-center gap-2 font-bold mb-1 text-secondary">
+                  <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                  <span>Message Delivered to Ahmed's Gmail!</span>
+                </div>
+                <span>Thank you! Your message has been sent directly to <strong>ahmed.khaled2011k@gmail.com</strong>. I will reply to you soon.</span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Professional Footer -->
+  <footer class="relative z-10 w-full bg-surface-container-lowest/90 border-t border-outline-variant/20 backdrop-blur-xl mt-20">
+    <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-surface-container-high/60">
+        
+        <div class="flex flex-col items-center md:items-start gap-2">
+          <div class="flex items-center gap-2">
+            <span class="font-mono text-sm text-secondary font-bold">&lt;/&gt;</span>
+            <span class="text-base font-bold text-on-surface">Ahmed Khaled Yaseen</span>
+          </div>
+          <p class="text-xs text-outline text-center md:text-left">
+            Frontend Engineer • Building scalable, user-focused web applications.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a aria-label="GitHub Profile" class="w-10 h-10 rounded-xl bg-surface-container-high border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors" href="https://github.com/AhmedKhaledYaseen" rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-[20px]">code</span>
+          </a>
+          <a aria-label="LinkedIn Profile" class="w-10 h-10 rounded-xl bg-surface-container-high border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors" href="https://www.linkedin.com/in/ahmed-khaled125" rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-[20px]">work</span>
+          </a>
+          <a aria-label="WhatsApp" class="w-10 h-10 rounded-xl bg-surface-container-high border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors" href="https://wa.me/201120610902" rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-[20px]">chat</span>
+          </a>
+          <a aria-label="Email" class="w-10 h-10 rounded-xl bg-surface-container-high border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors" href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmed.khaled2011k@gmail.com" target="_blank" rel="noopener noreferrer" title="Send Email (ahmed.khaled2011k@gmail.com)">
+            <span class="material-symbols-outlined text-[20px]">mail</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-outline">
+        <p>© 2026 Ahmed Khaled Yaseen. All rights reserved.</p>
+        <div class="flex items-center gap-2 text-secondary">
+          <span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          <span>Available for Internships &amp; Full-Time Roles</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Copy Toast Notification -->
+  <div id="copy-toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="px-4 py-3 rounded-xl bg-surface-container-highest/95 border border-secondary/40 text-on-surface shadow-2xl flex items-center gap-2 backdrop-blur-md font-mono text-xs">
+      <span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+      <span>Email copied to clipboard!</span>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

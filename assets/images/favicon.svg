@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="50%" stop-color="#00a6e0"/>
+      <stop offset="100%" stop-color="#7bd0ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#2563eb" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <!-- Background Card -->
+  <rect width="64" height="64" rx="16" fill="#0f131d"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#171b26" stroke="url(#blueGlow)" stroke-width="2.5"/>
+  <!-- Glowing Monogram <AK /> -->
+  <text x="32" y="39" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="18" font-weight="800" fill="url(#blueGlow)" text-anchor="middle" filter="url(#shadow)" letter-spacing="-0.5">&lt;AK/&gt;</text>
+</svg>
